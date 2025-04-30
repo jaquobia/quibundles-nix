@@ -1,5 +1,4 @@
 {
-	# pkgs ? import <nixpkgs> { config = {}; overlays = []; },
 	pkgs,
 	...
 }:
