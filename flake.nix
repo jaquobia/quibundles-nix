@@ -9,8 +9,9 @@
 			pkgs = import nixpkgs { inherit system; };
 		in 
 		{
-			packages.${system} = {
-				doomseeker = pkgs.libsForQt5.callPackage ./pkgs/doomseeker { };
-			};
+			packages.${system} = import ./default.nix { pkgs };
+			# packages.${system} = {
+			# 	doomseeker = pkgs.libsForQt5.callPackage ./pkgs/doomseeker { };
+			# };
 		};
 }
