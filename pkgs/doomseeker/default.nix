@@ -5,7 +5,6 @@
   fetchFromBitbucket,
   wrapQtAppsHook,
   pkg-config,
-  # kdePackages,
   qtbase,
   qttools,
   qtmultimedia,
