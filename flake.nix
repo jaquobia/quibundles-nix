@@ -15,10 +15,12 @@
 				let
 					pkgs = nixpkgs.legacyPackages.${system};
 					doomseeker-pkg = pkgs.libsForQt5.callPackage ./pkgs/doomseeker { };
+					zandronum-pkg = pkgs.callPackage ./pkgs/zandronum { };
 				in
 				{
 					default = doomseeker-pkg;
 					doomseeker = doomseeker-pkg;
+					zandronum = zandronum-pkg;
 				}
 			);
 		};
