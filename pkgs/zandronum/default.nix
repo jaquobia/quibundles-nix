@@ -15,6 +15,7 @@
   libjpeg,
   fluidsynth,
   fmodex,
+  libopus,
   openssl,
   gtk2,
   python3,
@@ -31,13 +32,14 @@ let
 in
 stdenv.mkDerivation {
   pname = "zandronum${suffix}";
-  version = "3.1.0";
+  version = "3.2.0";
 
   src = fetchhg {
     # expired ssl certificate
-    url = "http://hg.osdn.net/view/zandronum/zandronum-stable";
-    rev = "4178904d7698";
-    hash = "sha256-5t36CoRPPjDKQE0DVSv2Qqpqko6JAXBI53tuAYiylHQ=";
+    url = "https://foss.heptapod.net/zandronum/zandronum-stable";
+    rev = "7934480d32eddcf364526cffb1f689c443771626";
+    #hash = "sha256-5t36CoRPPjDKQE0DVSv2Qqpqko6JAXBI53tuAYiylHQ=";
+    sha256 = "sha256-Q6vyX0SCxj2hV+5TGGmymBbziX+hsra1/JBJnQ79jsg=";
   };
 
   # zandronum tries to download sqlite now when running cmake, don't let it
@@ -46,7 +48,7 @@ stdenv.mkDerivation {
   # protocol version doesn't match.
   patches = [
     ./zan_configure_impurity.patch
-    ./dont_update_gitinfo.patch
+    # ./dont_update_gitinfo.patch
     ./add_gitinfo.patch
   ];
 
@@ -61,6 +63,7 @@ stdenv.mkDerivation {
       libjpeg
       sqlite
       game-music-emu
+      libopus
     ]
     ++ lib.optionals (!serverOnly) [
       libGL
