@@ -18,14 +18,14 @@ index 07df0b64..6300542d 100644
 --- a/src/core/pathfinder/wadpathfinder.cpp
 +++ b/src/core/pathfinder/wadpathfinder.cpp
 @@ -84,10 +84,6 @@ public:
- 	QStringList defaultPaths()^M
- 	{^M
- 		QStringList paths;^M
--		#ifdef Q_OS_UNIX^M
--		paths << "/usr/local/share/games/doom/"^M
--			<< "/usr/share/games/doom/";^M
--		#endif^M
- 		return paths;^M
- 	}^M
- };^M
+ 	QStringList defaultPaths()
+ 	{
+ 		QStringList paths;
+-		#ifdef Q_OS_UNIX
+-		paths << "/usr/local/share/games/doom/"
+-			<< "/usr/share/games/doom/";
+-		#endif
+ 		return paths;
+ 	}
+ };
 
