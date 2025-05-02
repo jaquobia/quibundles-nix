@@ -17,7 +17,7 @@ diff --git a/src/core/pathfinder/wadpathfinder.cpp b/src/core/pathfinder/wadpath
 index 07df0b64..6300542d 100644
 --- a/src/core/pathfinder/wadpathfinder.cpp
 +++ b/src/core/pathfinder/wadpathfinder.cpp
-@@ -84,10 +84,6 @@ public:
+@@ -84,10 +84,6 @@
  	QStringList defaultPaths()
  	{
  		QStringList paths;
@@ -28,3 +28,4 @@ index 07df0b64..6300542d 100644
  		return paths;
  	}
  };
+
