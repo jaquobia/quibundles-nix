@@ -25,11 +25,13 @@
 						};
 						doomseeker-pkg = pkgs.libsForQt5.callPackage ./pkgs/doomseeker { };
 						zandronum-pkg = pkgs.callPackage ./pkgs/zandronum { };
+						sm64coopdx-pkg = pkgs.callPackage ./pkgs/sm64coopdx { };
 				in
 				{
 					default = doomseeker-pkg;
 					doomseeker = doomseeker-pkg;
 					zandronum = zandronum-pkg;
+					sm64coopdx = sm64coopdx-pkg;
 				}
 			);
 		};
